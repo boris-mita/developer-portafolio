@@ -1,42 +1,43 @@
 # Developer Portfolio 🚀
 
-Un portafolio web moderno y responsivo construido con **Next.js**, diseñado para mostrar proyectos, habilidades, experiencia y educación de un desarrollador full stack.
+A modern, responsive web portfolio built with **Next.js**, designed to showcase projects,
+skills, experience, and education for a full-stack developer.
 
-## ✨ Características
+## ✨ Features
 
-- **Multi-idioma**: Soporte completo para español, inglés y portugués usando `next-intl`
-- **Tema Oscuro/Claro**: Toggle de tema con persistencia
-- **Formulario de Contacto**: Integración con Telegram, Gmail y email
-- **Verificación reCAPTCHA**: Protección contra spam en formularios
-- **Animaciones**: Animaciones suaves con Lottie React
-- **Blog**: Sección de blog integrada
-- **Responsivo**: Diseño mobile-first adaptable a todos los dispositivos
-- **SEO Optimizado**: Metadatos y estructura optimizada para motores de búsqueda
-- **Docker**: Contenedores para desarrollo y producción
+- **Multi-language**: Full support for Spanish, English, and Portuguese using `next-intl`
+- **Dark/Light Theme**: Theme toggle with persistent state
+- **Contact Form**: Integrated with Telegram, Gmail, and email
+- **reCAPTCHA Verification**: Anti-spam protection for forms
+- **Animations**: Smooth animations powered by Lottie React
+- **Blog**: Integrated blog section
+- **Responsive**: Mobile-first design adaptable to all devices
+- **SEO Optimized**: Metadata and structure optimized for search engines
+- **Docker**: Containers configured for development and production
 
-## 🛠️ Stack Tecnológico
+## 🛠️ Tech Stack
 
 ### Frontend
 
-- **Next.js** 16.0.10 - Framework React moderno
-- **React** 19.2.3 - Librería de UI
-- **Tailwind CSS** 4.1.16 - Framework de estilos
-- **SASS** 1.69.5 - Preprocesador CSS
-- **Lottie React** 2.4.1 - Animaciones JSON
-- **React Icons** 4.11.0 - Iconos vectoriales
-- **React Toastify** 10.0.4 - Notificaciones
+- **Next.js** 16.0.10 - Modern React Framework
+- **React** 19.2.3 - UI Library
+- **Tailwind CSS** 4.1.16 - Styling Framework
+- **SASS** 1.69.5 - CSS Preprocessor
+- **Lottie React** 2.4.1 - JSON Animations
+- **React Icons** 4.11.0 - Vector Icons
+- **React Toastify** 10.0.4 - Notifications
 
 ### Backend & API
 
-- **Nodemailer** 6.9.15 - Envío de emails
-- **Axios** 1.6.8 - Cliente HTTP
-- **React Google reCAPTCHA** 3.1.0 - Verificación anti-spam
+- **Nodemailer** 6.9.15 - Email sending
+- **Axios** 1.6.8 - HTTP Client
+- **React Google reCAPTCHA** 3.1.0 - Anti-spam verification
 
-### Internacionalización
+### Internationalization
 
-- **next-intl** 4.7.0 - Gestión de idiomas
+- **next-intl** 4.7.0 - Language management
 
-## 📦 Dependencias Principales
+## 📦 Main Dependencies
 
 ```json
 {
@@ -51,97 +52,97 @@ Un portafolio web moderno y responsivo construido con **Next.js**, diseñado par
 }
 ```
 
-## 🚀 Inicio Rápido
+## 🚀 Quick Start
 
-### Requisitos Previos
+### Prerequisites
 
 - Node.js >= 18.x
-- pnpm (recomendado) o npm
+- pnpm (recommended) o npm
 
-### Instalación
+### Installation
 
-1. **Clonar el repositorio**
+1. **Clone the repository**
 
 ```bash
 git clone <repository-url>
 cd developer-portfolio
 ```
 
-2. **Instalar dependencias**
+2. **Install dependencies**
 
 ```bash
 pnpm install
-# o
+# or
 npm install
 ```
 
-3. **Configurar variables de entorno**
+3. **Configure environment variables**
 
-Crear un archivo `.env.local` en la raíz del proyecto:
+Create a `.env` file in the root directory:
 
 ```env
 # Email Configuration
-EMAIL_ADDRESS=tu_email@gmail.com
-GMAIL_PASSKEY=tu_contraseña_app_gmail
+EMAIL_ADDRESS=your_email@gmail.com
+GMAIL_PASSKEY=your_gmail_app_password
 
 # Telegram Configuration
-TELEGRAM_BOT_TOKEN=tu_bot_token
-TELEGRAM_CHAT_ID=tu_chat_id
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
 
 # Google reCAPTCHA
-NEXT_PUBLIC_RECAPTCHA_SITE_KEY=tu_site_key
-RECAPTCHA_SECRET_KEY=tu_secret_key
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_site_key
+RECAPTCHA_SECRET_KEY=your_secret_key
 ```
 
-### Desarrollo
+### Development
 
 ```bash
 pnpm dev
-# o
+# or
 npm run dev
 ```
 
-La aplicación estará disponible en `http://localhost:3000`
+The application will be available at `http://localhost:3000`
 
-### Build para Producción
+### Production Build
 
 ```bash
 pnpm build
 pnpm start
-# o
+# or
 npm run build
 npm run start
 ```
 
 ## 🐳 Docker
 
-### Desarrollo
+### Development
 
 ```bash
 docker-compose up
 ```
 
-El contenedor de desarrollo usa `Dockerfile.dev` con hot reload.
+The development container uses `Dockerfile.dev` with hot reload enabled.
 
-### Producción
+### Production
 
 ```bash
 docker build -f Dockerfile.prod -t developer-portfolio:latest .
 docker run -p 3000:3000 developer-portfolio:latest
 ```
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 ├── app/
-│   ├── api/                    # Rutas API
-│   │   ├── contact/           # API de contacto (POST)
-│   │   ├── data/              # API de datos
-│   │   └── google/            # Integraciones Google
-│   ├── assets/                # Animaciones Lottie y SVGs
-│   ├── blog/                  # Página de blog
-│   ├── components/            # Componentes reutilizables
-│   │   ├── homepage/          # Componentes de la página principal
+│   ├── api/                   # API routes
+│   │   ├── contact/           # Contact API (POST)
+│   │   ├── data/              # Data API
+│   │   └── google/            # Google integrations
+│   ├── assets/                # Lottie animations and SVGs
+│   ├── blog/                  # Blog page
+│   ├── components/            # Reusable components
+│   │   ├── homepage/          # Main page components
 │   │   │   ├── about/
 │   │   │   ├── blog/
 │   │   │   ├── contact/
@@ -150,109 +151,107 @@ docker run -p 3000:3000 developer-portfolio:latest
 │   │   │   ├── hero-section/
 │   │   │   ├── projects/
 │   │   │   └── skills/
-│   │   └── helper/            # Componentes auxiliares
-│   ├── css/                   # Estilos globales
-│   └── [locale]/              # Rutas internacionalizadas
-├── public/                    # Archivos estáticos
-├── i18n/                      # Configuración de idiomas
-├── messages/                  # Traducciones (EN, ES, PT)
-├── utils/                     # Funciones utilitarias
-│   ├── data/                  # Datos del portafolio
+│   │   └── helper/            # Helper components
+│   ├── css/                   # Global styles
+│   └── [locale]/              # Internationalized routes
+├── public/                    # Static assets
+├── i18n/                      # Language configuration
+├── messages/                  # Translations (EN, ES, PT)
+├── utils/                     # Utility functions
+│   ├── data/                  # Portfolio data
 │   │   ├── personal-data.js
 │   │   ├── skills.js
 │   │   ├── experience.js
 │   │   ├── educations.js
 │   │   └── projects-data.js
-│   └── content/               # Archivos JSON de contenido
-├── middleware.js              # Middleware de Next.js
-├── next.config.js             # Configuración de Next.js
-├── tailwind.config.js         # Configuración de Tailwind
-└── package.json               # Dependencias del proyecto
+│   └── content/               # Content JSON files
+├── middleware.js              # Next.js Middleware
+├── next.config.js             # Next.js configuration
+├── tailwind.config.js         # Tailwind CSS configuration
+└── package.json               # Project dependencies
 ```
 
-## 🔧 Configuración
+## 🔧 Configuration
 
-### Idiomas Soportados
+### Supported Languages
 
-Los idiomas se configuran en `i18n/routing.js`. Archivos de traducciones en `messages/`:
+Languages are configured in `i18n/routing.js`. Translation files are located in `messages/`:
 
 - `en.json` - English
-- `es.json` - Español
-- `pt.json` - Português
+- `es.json` - Spanish
+- `pt.json` - Portuguese
 
-### Datos del Portafolio
+### Portfolio Data
 
-Editar archivos en `utils/data/`:
+Edit the files located in `utils/data/`:
 
-- `personal-data.js` - Información personal
-- `skills.js` - Habilidades técnicas
-- `experience.js` - Experiencia laboral
-- `educations.js` - Educación y certificaciones
-- `projects-data.js` - Proyectos destacados
+- `personal-data.js` - Personal information
+- `skills.js` - Technical skills
+- `experience.js` - Work experience
+- `educations.js` - Education and certifications
+- `projects-data.js` - Featured projects
 
-### Animaciones Lottie
+### Lottie Animations
 
-Archivos de animación JSON en `app/assets/lottie/`
+JSON animation files are stored in `app/assets/lottie/`
 
-## 📧 Formulario de Contacto
+## 📧 Contact Form
 
-El formulario de contacto está integrado con:
+The contact form is integrated with:
 
-- **Gmail**: Envía un email a tu dirección configurada
-- **Telegram**: Envía un mensaje a tu bot de Telegram
-- **Validaciones**: Email y reCAPTCHA
+- **Gmail**: Sends an email to your configured address
+- **Telegram**: Sends a message to your Telegram bot
+- **Validations**: Email and reCAPTCHA
 
-**Configurar Gmail:**
+**Configuring Gmail:**
 
-1. Habilitar autenticación de 2 factores
-2. Generar contraseña de aplicación
-3. Usar en `GMAIL_PASSKEY`
+1. Enable 2-Factor Authentication (2FA)
+2. Generate an App Password
+3. Use it in GMAIL_PASSKEY
 
-**Configurar Telegram:**
+**Configuring Telegram:**
 
-1. Crear bot con @BotFather
-2. Obtener token del bot
-3. Conseguir chat ID de tu cuenta
+1. Create a bot via @BotFather
+2. Obtain the bot token
+3. Get your account's chat ID
 
-## 🎨 Temas y Estilos
+## 🎨 Themes and Styling
 
-- Tailwind CSS para utilidades
-- SASS para estilos personalizados en `app/css/`
-- Soporte para tema oscuro/claro
-- Componentes reutilizables en `components/helper/`
+- Tailwind CSS for utility classes
+- SASS for custom styles in `app/css/`
+- Dark/Light mode support
+- Reusable components located in `components/helper/`
 
-## 📊 Scripts Disponibles
+## 📊 Available Scripts
 
 ```bash
-pnpm dev      # Iniciar servidor de desarrollo
-pnpm build    # Compilar para producción
-pnpm start    # Iniciar servidor de producción
-pnpm lint     # Ejecutar linter
+pnpm dev      # Start development server
+pnpm build    # Build for production
+pnpm start    # Start production server
+pnpm lint     # Run linter
 ```
 
-## 🔗 Enlaces de Contacto
+## 🔗 Contact Links
 
 - **Email**: borisleonel12@gmail.com
 - **GitHub**: https://github.com/boris-mita/
 - **LinkedIn**: https://www.linkedin.com/in/boris-leonel-8a3296175/
-- **Stack Overflow**: https://stackoverflow.com/users/16840768/boris-leonel
-- **Dev.to**: https://dev.to/borisleonel
 
-## 🤝 Contribuciones
+## 🤝 Contributing
 
-Las contribuciones son bienvenidas. Por favor:
+Contributions are welcome! Please follow these steps:
 
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the repository
+2. Create a feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
 
-## 📧 Soporte
+## 📧 Support
 
-Para reportar bugs o solicitar features, abre un issue en el repositorio.
+To report bugs or request new features, please open an issue in the repository.
 
 ---
 
-**Desarrollado por** [Boris Leonel](https://github.com/boris-mita)  
+**Developed by** [Boris Leonel](https://github.com/boris-mita)  
 **Stack**: Next.js • React • Tailwind CSS • Node.js
