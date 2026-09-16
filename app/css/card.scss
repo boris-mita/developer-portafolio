@@ -2,45 +2,116 @@
   --spread: 60;
 }
 
-html:not(.dark) .glow-container {
-  --card: #f5fbf5;
+.glow-card {
+  --active: 0.15;
+  --start: 0;
 }
 
-/* Elegant rotating halo effect using theme tokens */
-@property --angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
+.glow-card:is(:hover, :focus-visible) {
+  z-index: 2;
 }
 
-@keyframes halo-rotate {
-  to {
-    --angle: 360deg;
-  }
+.glows {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  filter: blur(calc(var(--blur) * 1px));
 }
 
-.effect-rotating {
-  position: relative;
-  isolation: isolate;
-  /* speed variable used only on hover */
-  --halo-speed: 12s;
-}
-
-.effect-rotating-continuous,
-.effect-rotating:hover,
-.effect-rotating:focus-visible {
-  /* show a single rotating ring as the visible border */
-  border-color: transparent;
-  background:
-    linear-gradient(var(--card), var(--card)) padding-box,
+.glows::after,
+.glows::before {
+  --alpha: 0;
+  content: "";
+  background: conic-gradient(
+    from 180deg at 50% 70%,
+    #f626af 0deg,
+    #8228ec 72.0000010728836deg,
+    #f626af 144.0000021457672deg,
+    #0025ba 216.00000858306885deg,
+    #f626af 288.0000042915344deg,
+    #fafafa 1turn
+  );
+  background-attachment: fixed;
+  position: absolute;
+  inset: -5px;
+  border: 8px solid transparent;
+  border-radius: 12px;
+  mask:
+    linear-gradient(#0000, #0000),
     conic-gradient(
-        from var(--angle),
-        var(--primary) 0deg,
-        var(--secondary) 120deg,
-        var(--primary) 240deg,
-        var(--primary-foreground) 360deg
-      )
-      border-box;
-  animation: halo-rotate var(--halo-speed) linear infinite;
-  --halo-speed: 6s;
+      from calc((var(--start) - (var(--spread) * 0.5)) * 1deg),
+      #000 0deg,
+      #fff,
+      #0000 calc(var(--spread) * 1deg)
+    );
+  mask-composite: intersect;
+  mask-clip: padding-box, border-box;
+  opacity: var(--active);
+  transition: opacity 1s;
+}
+
+.glow-card::before {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  content: "";
+  border-radius: 12px;
+  pointer-events: none;
+  background: #84738c;
+  background-attachment: fixed;
+  border-radius: 12px;
+  mask:
+    linear-gradient(#0000, #0000),
+    conic-gradient(
+      from
+        calc(
+          ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 1.5)) *
+            1deg
+        ),
+      #ffffff26 0deg,
+      white,
+      #ffffff26 calc(var(--spread) * 2.5deg)
+    );
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+  opacity: var(--active);
+  transition: opacity 1s;
+}
+
+.glow-card::after {
+  --bg-size: 100%;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  background: conic-gradient(
+    from 180deg at 50% 70%,
+    #f626af 0deg,
+    #8228ec 72.0000010728836deg,
+    #f626af 144.0000021457672deg,
+    #0025ba 216.00000858306885deg,
+    #f626af 288.0000042915344deg,
+    #fafafa 1turn
+  );
+  background-attachment: fixed;
+  border-radius: 12px;
+  opacity: var(--active, 0);
+  transition: opacity 1s;
+  --alpha: 0;
+  inset: 0;
+  border: 2px solid transparent;
+  mask:
+    linear-gradient(#0000, #0000),
+    conic-gradient(
+      from
+        calc(
+          ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 0.5)) *
+            1deg
+        ),
+      #0000 0deg,
+      #fff,
+      #0000 calc(var(--spread) * 0.5deg)
+    );
+  filter: brightness(1.5);
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
 }
