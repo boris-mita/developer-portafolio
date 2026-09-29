@@ -45,7 +45,7 @@
   },
   "about": {
     "title": "About Me",
-    "description": "Full Stack Developer with over 3 years of experience building web and mobile applications for public institutions and private companies. Experienced in frontend development with Vue, Nuxt, React, and Next.js; backend development with NestJS and Laravel; REST API development and integration, relational databases, Docker, Git, and Agile methodologies. Able to quickly adapt to new technologies and focused on building scalable, high-performance solutions."
+    "description": "Full Stack Developer with experience building web and mobile applications. Experienced in frontend development with Vue, Nuxt, React, and Next.js; backend development with NestJS and Laravel; REST API development and integration, relational databases, Docker, Git, and Agile methodologies. Able to quickly adapt to new technologies and focused on building scalable, high-performance solutions."
   },
   "experience": {
     "title": "Experience",
